@@ -26,8 +26,10 @@ int main(){
 
   cout << "Your guess: ";
   cin >> input;
+  //only runs while the number is unfound
   while(!found){
     guesses++;
+    //tells player if they need to increase or decrease their guess
     if(input > random){
       cout << "Lower.";
       cin >> input;
@@ -35,11 +37,13 @@ int main(){
       cout << "Higher.";
       cin >> input;
     }else if(input == random){
+      //win condition
       cout << "Yay! You found the number in " << guesses << " guesses! Play again (Y/N)?";
       found = true;
       cin >> answer;
     }
   }
+  //continue condition
   if(answer == 'Y'){
     cout << "Starting game again!";
     main();
